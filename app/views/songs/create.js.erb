@@ -8,10 +8,6 @@ function attachEventListener(){
 	});
 }
 
-// function commentStream(){
-//   $('#comments-stream').html("<%= escape_javascript(render('/comments/comments')) %>");
-//   $('.comment-stream-box').hide();
-// }
 
 function addUserSong(){
 	$("#my-uploads").prepend("<%= escape_javascript(render('usersong')) %>");
@@ -25,4 +21,3 @@ function addAllSong(){
 
 addUserSong();
 addAllSong();
-// commentStream();
