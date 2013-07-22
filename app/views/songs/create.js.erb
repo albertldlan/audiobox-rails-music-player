@@ -1,0 +1,22 @@
+function attachEventListener(){
+  $('a.html5').click(function(e) {
+  	e.preventDefault();
+  	$("#jquery_jplayer_1")
+      .jPlayer("setMedia", {mp3: this.href })
+      .jPlayer("play");
+  	$('#currently-playing').html(this.id);
+	});
+}
+
+function addUserSong(){
+	$(".user-new-upload").html("<%= escape_javascript(render('usersong')) %>");
+	attachEventListener();
+}
+
+function addAllSong(){
+	$("#all-users").prepend("<%= escape_javascript(render('allsong')) %>");
+	attachEventListener();
+}
+
+addUserSong();
+addAllSong();

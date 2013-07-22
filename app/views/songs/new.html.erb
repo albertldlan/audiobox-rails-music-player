@@ -1,0 +1,16 @@
+<div id="upload-box">
+	<h1 class="index-text">Upload a File</h1>
+	<span class="navbar-blue">Files will upload in background - this window can be closed after uploading has begun</span>
+<%= s3_uploader_form post: songs_url, as: "song[song_url]", class: "uploader" do %>
+	<span class="">Drag files here to begin upload</span>
+  <%= file_field_tag :file, multiple: true %>
+
+<script id="template-upload" type="text/x-tmpl">
+<div class="upload">
+  {%=o.name%}
+  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+</div>
+</script>
+</div>
+
+<% end %>

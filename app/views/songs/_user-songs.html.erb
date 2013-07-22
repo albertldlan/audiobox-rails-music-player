@@ -1,0 +1,7 @@
+	<div id="my-uploads" class="song-list">
+		<div class="user-new-upload"></div>
+		<% @user_songs.each do |song| %>
+			<p><%= link_to "#{song.title}", "#{song.direct_upload_url}", :class => "html5", :id => "#{song.title}" %></p>
+			<p><%= link_to "View Comment Stream", song_comments_path(song), :remote => true, :class => "view-comment-stream" %></p>
+		<% end %>
+	</div>

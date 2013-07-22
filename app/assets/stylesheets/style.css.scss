@@ -1,0 +1,529 @@
+/* *{
+ border:1px solid red;
+ } */
+
+$navbar-blue: #079ED5;
+$navbar-hover: #00CCFC;
+$navbar-gray: #ABBBBB;
+
+@font-face {
+  font-family: 'Broken-33';
+  src:font-url('brokenrecords_33.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Broken-45';
+  src:font-url('brokenrecords_45.ttf') format('truetype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Jungle';
+  src:font-url('UrbanJungleDEMO.otf') format('opentype');
+  font-weight: bolder;
+  font-style: normal;
+}
+
+body{
+	font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
+	/*background-image:url('graffiti.jpg');*/
+	/*background-size:100%;*/
+	background-image: url('brickwall.png');
+	font-size:16px;
+}
+
+#hidden{
+	margin-top:145px;
+	position:relative;
+}
+
+.navbar-blue{
+	color:$navbar-blue;
+}
+
+.container{
+	width:960px;
+	margin:0px auto;
+	position:relative;
+}
+
+.navbar{
+	position:fixed;
+	top:0;
+	right:0;
+	left:0;
+	z-index:1000;
+	-webkit-box-shadow: 0 2px 3px rgba(0,0,0,.25);
+	box-shadow:0 2px 3px rgba(0,0,0,.25);
+}
+
+.navbar-inner{
+	position:relative;
+	width:100%;
+	background-position: 0 0;
+	background-image:url('stressed_linen.png');
+	height:65px;
+}
+
+.navbar-link{
+	color:$navbar-blue;
+	text-decoration: none;
+}
+
+.navbar-link:hover{
+	color:$navbar-hover;
+}
+
+.logo{
+	font-size: 40px;
+	color:$navbar-blue;
+	text-decoration: none;
+	font-weight: bolder;
+	width:auto;
+	font-family:'Jungle';
+	vertical-align:bottom;
+	margin-top:5px;
+}
+
+.logo:hover{
+	color:$navbar-hover;
+}
+
+.navbar-text{
+	color:#ABBBBB;
+	margin-left:20px;
+}
+
+.login-inputs{
+	float:right;
+	margin-top:7px;
+}
+
+.login-inputs div{
+	display:inline;
+}
+
+.login-inputs input{
+	width:150px;
+	padding:3px;
+	border-radius:5px;
+}
+
+.login-inputs input:nth-child(3){
+	width:80px;
+	background-color: $navbar-blue;
+	font-weight: bold;
+	border-radius: 3px;
+	padding:3px 5px 3px 5px;
+	vertical-align: middle;
+	color:white;
+}
+
+.login-inputs input:nth-child(3):hover{
+	background-color:$navbar-hover;
+}
+
+.navbar-other-links{
+	margin-top:5px;
+	float:right;
+	color:white;
+	font-weight:bold;
+}
+
+#logo-stuff{
+	float:left;
+}
+
+#logo-stuff span{
+	float:right;
+	font-family:'Jungle';
+}
+
+#logo-stuff span:hover{
+	color:white;
+	cursor:default;
+}
+
+.register-inputs{
+	background-image:url('brickwall.png');
+	-moz-background-clip: padding;     /* Firefox 3.6 */
+	-webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+	background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+	border: 20px solid rgba(0,0,0,0.3);
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border-radius: 40px; 
+	padding: 30px;
+	width: 250px;
+  text-align:center;
+  position:absolute;
+  z-index:1000;
+  right:300px;
+  margin-top:-70px;
+}
+
+.register-inputs input{
+	width:225px;
+	height:25px;
+	padding:3px;
+	border-radius:5px;
+	margin-bottom:25px;
+}
+
+.register-inputs-page{
+	width: 231px;
+	margin-top:25px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.register-inputs-page input{
+	width:225px;
+	height:25px;
+	padding:3px;
+	border-radius:5px;
+	margin-bottom:25px;
+}
+
+#register-btn{
+	background-color: $navbar-blue;
+	font-weight: bold;
+	border-radius: 5px;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:20px;
+	color:white;
+	width:231px;
+	height:auto;
+}
+
+#register-btn:hover{
+	background-color:$navbar-hover;
+}
+
+h1{
+	color: $navbar-blue;
+	font-family: 'Jungle';
+	font-size:36px;
+}
+
+.close-btn{
+	color:$navbar-blue;
+	text-decoration:none;
+	float:right;
+	font-size:12px;
+}
+
+.close-btn:hover{
+	color:$navbar-hover;
+}
+
+#background-color{
+	height:100%;
+	width:100%;
+	position:fixed;
+	top:0;
+	left:0;
+	opacity:0.7;
+	z-index:-1;
+}
+
+.background-gray{
+	background-color:gray;
+}
+
+.edit-profile-inputs{
+	width: 231px;
+	margin-top:25px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+}
+
+.edit-profile-inputs input{
+	width:225px;
+	height:25px;
+	padding:3px;
+	border-radius:5px;
+	margin-bottom:25px;
+}
+
+#edit-btn{
+	background-color: $navbar-blue;
+	font-weight: bold;
+	border-radius: 5px;
+	padding-top:10px;
+	padding-bottom:10px;
+	font-size:20px;
+	color:white;
+	width:231px;
+	height:auto;
+}
+
+#edit-btn:hover{
+	background-color:$navbar-hover;
+}
+
+#user-show-header{
+	float:left;
+	clear:both;
+	width:450px;
+	padding:0px 10px 10px 10px;
+	background:rgba(117, 125, 138, 0.1);
+	border-radius:15px;
+}
+
+#user-show-header h1{
+	text-align: center;
+}
+
+.upload-box{
+	background-image:url('brickwall.png');
+	-moz-background-clip: padding;     /* Firefox 3.6 */
+	-webkit-background-clip: padding;  /* Safari 4? Chrome 6? */
+	background-clip: padding-box;      /* Firefox 4, Safari 5, Opera 10, IE 9 */
+	border: 20px solid rgba(0,0,0,0.3);
+	-webkit-border-radius: 40px;
+	-moz-border-radius: 40px;
+	border-radius: 40px; 
+	padding: 30px;
+	width: 400px;
+  text-align:center;
+  position:absolute;
+  z-index:1000;
+  right:225px;
+}
+
+.upload-box h1{
+	clear:both;
+}
+
+#fileupload{
+	width:220px;
+	margin:0px auto;
+	border: 3px solid $navbar-blue;
+	border-radius:15px;
+	padding:50px;
+	background-image: url('binding_light.png');
+	margin-top:20px;
+}
+
+#file{
+	width:200px;
+}
+
+#upload-box{
+	width: 400px;
+  text-align:center;
+  margin-left:auto;
+  margin-right:auto;
+  margin-top:100px;
+}
+
+#upload-box h1{
+	clear:both;
+}
+ 
+.index-text{
+	background-image:url('brickwall.png');
+	margin-top: -20px;
+	width:250px;
+	margin-left:auto;
+	margin-right:auto;
+}
+
+.upload {
+  width: 220px;
+  padding-top: 10px;
+  margin-top: 10px;
+  margin-left:auto;
+  margin-right:auto;
+  text-align:center;
+
+  .progress {
+    margin-top: 8px;
+    border: solid 1px #555;
+    border-radius: 3px;
+    -moz-border-radius: 3px;
+    .bar {
+      height: 10px;
+      background: $navbar-blue;
+    }
+  }
+}
+
+#upload-btn{
+	float:right;
+	font-weight:bold;
+	font-size:24px;
+	font-family:'Jungle';
+	clear:both;
+	margin-top:-25px;
+}
+
+.upload-text{
+	color:$navbar-blue;
+	font-weight:bold;
+	font-size:20px;
+}
+
+#audio{
+	color:$navbar-blue;
+	font-weight:bold;
+	text-align:center;
+}
+
+section{
+	width:auto;
+}
+
+#audio{
+	display:inline-block;
+	margin-left:350px;
+}
+
+a.html5{
+	display:inline-block;
+}
+
+.navbar2{
+	position:fixed;
+	top:65px;
+	right:0;
+	left:0;
+	z-index:1000;
+	-webkit-box-shadow: 0 2px 3px rgba(0,0,0,.25);
+	box-shadow:0 2px 3px rgba(0,0,0,.25);
+	height:40px;
+	background-color: #EEEAEB;
+}
+
+.navbar-inner2{
+	position:relative;
+	width:100%;
+	background-position: 0 0;
+	height:30px;
+}
+
+#song-title{
+	color:$navbar-blue;
+	font-weight:bold;
+	text-align:center;
+}
+
+#view-all{
+	color:$navbar-blue;
+	text-decoration:none;
+	float:right;
+}
+
+#view-all:hover{
+	color:$navbar-hover;
+}
+
+#recently-uploaded{
+	float:left;
+	width:450px;
+	padding:0px 10px 10px 10px;
+	margin-bottom:20px;
+	background:rgba(117, 125, 138, 0.1);
+	border-radius:15px;
+}
+
+#recently-uploaded h1{
+	text-align: center;
+}
+
+#my-recent-uploads{
+	float:left;
+	clear:both;
+	width:450px;
+	padding:0px 10px 10px 10px;
+	background:rgba(117, 125, 138, 0.1);
+	border-radius:15px;
+}
+
+#my-recent-uploads h1{
+	text-align: center;
+}
+
+#comment-stream{
+	float:right;
+	width:430px;
+	padding:0px 20px 10px 20px;
+	background:rgba(117, 125, 138, 0.1);
+	border-radius:15px;
+}
+
+#comment-stream h1{
+	text-align: center;
+}
+
+.song-uploaded-by{
+	float:right;
+}
+
+.song-list{
+	color:black;
+}
+
+.song-list a{
+	color:$navbar-blue;
+	text-decoration:none;
+	font-weight: bold;
+}
+
+.song-list a:hover{
+	color:$navbar-hover;
+}
+
+.view-comment-stream{
+	margin-left:277px;
+}
+
+.comment-stream-box{
+	background:rgba(117, 125, 138, 0.13);
+	padding:5px 15px 5px 15px;
+	margin-bottom: 15px;
+	border-radius: 15px;
+}
+
+.comment-stream-box a{
+	color:$navbar-blue;
+	text-decoration:none;
+}
+
+.comment-stream-box a:hover{
+	color:$navbar-hover;
+}
+
+.comment-stream-box p:nth-child(2){
+	margin-left:20px;
+}
+
+.comment-btn{
+	background-color: $navbar-blue;
+	font-weight: bold;
+	border-radius: 5px;
+	padding:5px 0px 5px 0px;
+	font-size:14px;
+	color:white;
+	width:120px;
+	height:auto;
+	float:right;
+	margin-right:15px;
+}
+
+#comment-box{
+	width:430px;
+	height:420px;
+	overflow:auto;
+}
+
+#new_comment{
+	text-align:center;
+}

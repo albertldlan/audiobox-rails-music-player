@@ -1,0 +1,3 @@
+<p><%= link_to "#{@song.title}", "#{@song.direct_upload_url}", :class => "html5", :id => "#{@song.title}" %>
+<span class="song-uploaded-by">Submitted by: <%= link_to "#{@song.user.username}", user_path(@song.user), :remote => true %></span></p>
+<p><%= link_to "View Comment Stream", song_comments_path(@song), :remote => true, :class => "view-comment-stream" %></p>

@@ -1,0 +1,6 @@
+function commentStream(){
+	$('#comments-stream').html("<%= escape_javascript(render('/comments/comment')) %>");
+	// $('.comment-stream-box').hide();
+}
+
+commentStream();

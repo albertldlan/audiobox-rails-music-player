@@ -1,0 +1,16 @@
+function attachEventListener(){
+  $('a.html5').click(function(e) {
+  	e.preventDefault();
+  	$("#jquery_jplayer_1")
+      .jPlayer("setMedia", {mp3: this.href })
+      .jPlayer("play");
+  	$('#currently-playing').html(this.id);
+	});
+}
+
+function showPage(){
+	$('#document-body').html("<%= escape_javascript(render('show')) %>");
+	attachEventListener();
+}
+
+showPage();

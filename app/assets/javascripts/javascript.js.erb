@@ -1,0 +1,62 @@
+$(document).ready(function(){
+	
+  $('.register-inputs').hide();
+  $('.upload-box').hide();
+
+	$('#register-link').click(function (event) {
+	  $('.register-inputs').show();
+	  $('#background-color').addClass("background-gray");
+	  $('#background-color').css("z-index", '100');
+	  event.preventDefault(); // Prevent link from following its href
+	});
+
+	$('#upload-btn').click(function (event) {
+	  $('.upload-box').show();
+	  $('#background-color').addClass("background-gray");
+	  $('#background-color').css("z-index", '100');
+	  event.preventDefault(); // Prevent link from following its href
+	});
+
+	$('.close-btn').click(function (event){
+		$('.register-inputs').hide();
+		$('.upload-box').hide();
+	  $('#background-color').removeClass("background-gray");
+	  $('#background-color').css("z-index", '-1');
+		event.preventDefault();
+	});
+
+  $("#jquery_jplayer_1").jPlayer({
+  	supplied: "mp3",
+  });
+
+  function attachEventListener(){
+  	  $('a.html5').click(function(e) {
+      	e.preventDefault();
+      	$("#jquery_jplayer_1")
+          .jPlayer("setMedia", {mp3: this.href })
+          .jPlayer("play");
+      	$('#currently-playing').html(this.id);
+			});
+  }
+
+  $('a.html5').click(function(e) {
+      e.preventDefault();
+      $("#jquery_jplayer_1")
+      	.jPlayer("setMedia", {mp3: this.href })
+      	.jPlayer("play");
+      $('#currently-playing').html(this.id);
+  });
+
+  $("#jquery_jplayer_1").bind($.jPlayer.event.timeupdate, function(event) {
+    var currentTime = Math.floor(event.jPlayer.status.currentTime);
+    $('#comment_time').attr('value', currentTime);
+    $('.'+currentTime).show('slow', function(){
+      // if ($(this).prev().attr('id') != 'comment-stream-header'){
+      //   $(this).prev().hide('slow');
+      // }
+    });
+	});
+
+  $('.comment-stream-box').hide();
+
+});

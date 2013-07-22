@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title><%= yield :title %></title>
+  <%= stylesheet_link_tag    "application", :media => "all" %>
+  <%= javascript_include_tag "application" %>
+  <%= csrf_meta_tags %>
+  <link rel="stylesheet" href="/circle.skin/circle.player.css">
+  <!-- <link rel="stylesheet" href="/pink.flag/jplayer.pink.flag.css"> -->
+  <link rel="stylesheet" href="/blue.monday/jplayer.blue.monday.css">
+</head>
+<body>
+	<div class="navbar">
+		<div class="navbar-inner">
+			<div class="container">
+				<div id="logo-stuff">
+					<%= link_to "SoapBox", root_url, class:"logo", :remote => true %><br>
+					<span class="navbar-text">Speak Up</span>
+				</div>
+				<% if !current_user %>
+				<%= simple_form_for("user", :url => user_session_path) do |f| %>
+					<div class="login-inputs">
+				    <%= f.input :login, :label => false, :required => false, :autofocus => true, :placeholder => "Username or Email" %>
+				    <%= f.input :password, :label => false, :required => false, :placeholder => "Password" %>
+				    <%= f.button :submit, "Login", :class => "submit-btn" %><br>
+				    <span class="navbar-text navbar-other-links">No account? <%= link_to "Register", new_user_registration_path, class:"navbar-link", id:"register-link" %></span>
+				  </div>
+				<% end %>
+				<% else %>
+					<div>
+					<span id="signed-in" class="navbar-other-links">Signed in as <%= link_to "#{current_user.username}", user_path(current_user), :class => "navbar-link", :remote => true %>. Not you? <%= link_to "Sign out here", destroy_user_session_path, :method => :delete, :class => "navbar-link" %></span>
+					<%= link_to "Upload", upload_path, class:"navbar-link", id:"upload-btn" %>
+					</div>
+				<% end %>
+			</div>
+		</div>
+	</div>
+	<div class="navbar2">
+		<div class="navbar-inner2">
+			<div class="container">
+    <div id="audio-navbar">
+
+
+
+
+
+
+<div id="jquery_jplayer_1" class="jp-jplayer"></div>
+
+<div id="jp_container_1" class="jp-audio">
+    <div class="jp-type-single">
+        <div class="jp-gui jp-interface">
+            <ul class="jp-controls">
+                
+                <!-- comment out any of the following <li>s to remove these buttons -->
+                
+                <li><a href="javascript:;" class="jp-play" tabindex="1">play</a></li>
+                <li><a href="javascript:;" class="jp-pause" tabindex="1">pause</a></li>
+                <li><a href="javascript:;" class="jp-stop" tabindex="1">stop</a></li>
+                <li><a href="javascript:;" class="jp-mute" tabindex="1" title="mute">mute</a></li>
+                <li><a href="javascript:;" class="jp-unmute" tabindex="1" title="unmute">unmute</a></li>
+                <li><a href="javascript:;" class="jp-volume-max" tabindex="1" title="max volume">max volume</a></li>
+            </ul>
+            
+            <!-- you can comment out any of the following <div>s too -->
+            
+            <div class="jp-progress">
+                <div class="jp-seek-bar">
+                    <div class="jp-play-bar"></div>
+                </div>
+            </div>
+            <div class="jp-volume-bar">
+                <div class="jp-volume-bar-value"></div>
+            </div>
+            <div class="jp-current-time"></div>
+            <div class="jp-duration"></div>                   
+        </div>
+        <div class="jp-title">
+            <ul>
+                <li id="currently-playing">Nothing Currently Playing</li>
+            </ul>
+        </div>
+        <div class="jp-no-solution">
+            <span>Update Required</span>
+            To play the media you will need to either update your browser to a recent version or update your <a href="http://get.adobe.com/flashplayer/" target="_blank">Flash plugin</a>.
+        </div>
+    </div>
+</div>
+
+
+
+
+
+
+
+        <!-- <span id="audio">Nothing is currently playing.</span> -->
+    </div>
+			</div>
+		</div>
+	</div>
+	<div id="hidden" class="container">
+		<div class="register-inputs">
+			<%= link_to "Close this window", '/',:class => "close-btn" %>
+			<h1>Registration</h1>
+			<%= simple_form_for("user", :url => user_registration_path) do |f| %>
+			  <%= f.error_notification %>
+			  	<%= f.input :username, :required => true, :autofocus => true, :placeholder => "Username", :label => false %>
+			    <%= f.input :email, :required => true, :placeholder => "Email", :label => false %>
+			    <%= f.input :password, :required => true, :placeholder => "Password", :label => false %>
+			    <%= f.input :password_confirmation, :required => true, :placeholder => "Confirm Password", :label => false %>
+			    <%= f.button :submit, "Sign Me Up!", :id => "register-btn" %>
+			<% end %>
+		</div>
+		<% if current_user %>
+		<div class="upload-box">
+			<%= link_to "Close this window", '/',:class => "close-btn" %><br><br>
+			<span class="navbar-blue">Files will upload in background - this window can be closed after uploading has begun</span>
+			<%= s3_uploader_form post: songs_url, as: "song[direct_upload_url]", class: "uploader" do %>
+				<span class="upload-text">Drag files here to begin upload</span>
+			  <%= file_field_tag :file, multiple: true %>
+			<script id="template-upload" type="text/x-tmpl">
+			<div class="upload">
+			  {%=o.name%}
+			  <div class="progress"><div class="bar" style="width: 0%"></div></div>
+			</div>
+			</script>
+		</div>
+		<% end %>
+		<% else %>
+		<% yield %>
+		<% end %>
+	</div>
+	<div id="document-body">
+		<%= yield %>
+		</div>
+	<div id="background-color"></div>
+</body>
+</html>
