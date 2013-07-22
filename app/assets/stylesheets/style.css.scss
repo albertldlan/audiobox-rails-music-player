@@ -7,22 +7,8 @@ $navbar-hover: #00CCFC;
 $navbar-gray: #ABBBBB;
 
 @font-face {
-  font-family: 'Broken-33';
-  src:font-url('brokenrecords_33.ttf') format('truetype');
-  font-weight: bolder;
-  font-style: normal;
-}
-
-@font-face {
-  font-family: 'Broken-45';
-  src:font-url('brokenrecords_45.ttf') format('truetype');
-  font-weight: bolder;
-  font-style: normal;
-}
-
-@font-face {
   font-family: 'Jungle';
-  src:font-url('UrbanJungleDEMO.otf') format('opentype');
+  src:url('UrbanJungleDEMO.otf') format('opentype');
   font-weight: bolder;
   font-style: normal;
 }
