@@ -1,1 +1,1 @@
-<p><%= link_to "#{@song.title}", "#{@song.direct_upload_url}", :class => "html5", :id => "#{@song.title}", :name => "#{song.direct_upload_url}" %></p>
+<p><%= link_to "#{@song.title}", song_comments_path(@song), :remote => true, :class => "html5", :id => "#{@song.title}", :name => "#{@song.direct_upload_url}" %></p>
