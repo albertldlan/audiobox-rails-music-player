@@ -1,5 +1,4 @@
 	<div id="my-uploads" class="song-list">
-		<div class="user-new-upload"></div>
 		<% @user_songs.each do |song| %>
 			<p><%= link_to "#{song.title}", song_comments_path(song), :remote => true, :class => "html5", :id => "#{song.title}", :name => "#{song.direct_upload_url}" %></p>
 		<% end %>

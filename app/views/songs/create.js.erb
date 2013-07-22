@@ -9,7 +9,7 @@ function attachEventListener(){
 }
 
 function addUserSong(){
-	$(".user-new-upload").html("<%= escape_javascript(render('usersong')) %>");
+	$("#my-uploads").prepend("<%= escape_javascript(render('usersong')) %>");
 	attachEventListener();
 }
 
