@@ -42,7 +42,7 @@ $(document).ready(function(){
   $('a.html5').click(function(e) {
       e.preventDefault();
       $("#jquery_jplayer_1")
-      	.jPlayer("setMedia", {mp3: this.href })
+      	.jPlayer("setMedia", {mp3: this.name })
       	.jPlayer("play");
       $('#currently-playing').html(this.id);
   });

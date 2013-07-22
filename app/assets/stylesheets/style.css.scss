@@ -426,7 +426,6 @@ a.html5{
 
 #my-recent-uploads{
 	float:left;
-	clear:both;
 	width:450px;
 	padding:0px 10px 10px 10px;
 	background:rgba(117, 125, 138, 0.1);
@@ -512,4 +511,10 @@ a.html5{
 
 #new_comment{
 	text-align:center;
+}
+
+#comments-stream{
+	float:right;
+	width:430px;
+	height:420px;
 }
