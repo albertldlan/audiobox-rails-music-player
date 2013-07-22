@@ -7,7 +7,7 @@ gem 'rails', '3.2.13'
 
 # group :development do
 # 	gem 'sqlite3'
-# 	gem 'rails-footnotes'
+	# gem 'rails-footnotes'
 # end
 
 # group :production do

@@ -1,5 +1,6 @@
 function commentStream(){
-	$('#new-comment').prepend("<%= escape_javascript(render('/comments/comment')) %>");
+	$('.new-comment').prepend("<%= escape_javascript(render('/comments/comment')) %>");
+	$('#comment_comment').val('');
 }
 
 commentStream();
