@@ -1,18 +1,4 @@
-<div id="comment-stream">
-	<div id="comment-box">
-		<h1 id="comment-stream-header"><span>Comment Stream</span></h1>
-		<% @comments.order("time desc").each do |comment| %>
-		<div class="comment-stream-box <%= comment.time %>">
-			<p><%= link_to "#{comment.user.username}", user_path(comment.user.id) %> said: </p>
-			<p><%= comment.comment %></p>
-		</div>
-		<% end %>
-	</div>
-		<%= simple_form_for(Comment.new, :url => song_comments_path, :remote => true) do |f| %>
-		<%= f.input :comment, :input_html => {:style => 'width: 395px; height:55px'}, :label => false %>
-		<%= f.hidden_field :song_id, :value => @song.id %>
-		<%= f.hidden_field :time, :value => "0" %>
-		<%= f.button :submit, :class => "comment-btn", :value  => "Add Comment" %>
-		<% end %>
-
+<div class="comment-stream-box <%= @comment.time %>">
+	<p><%= link_to "#{@comment.user.username}", user_path(@comment.user.id) %> said: </p>
+	<p><%= comment.comment %><span class="timestamp"> at <%= comment.time %> seconds</span></p>
 </div>

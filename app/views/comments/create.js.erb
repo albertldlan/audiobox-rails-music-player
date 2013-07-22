@@ -1,6 +1,5 @@
 function commentStream(){
-	$('#comments-stream').html("<%= escape_javascript(render('/comments/comment')) %>");
-	// $('.comment-stream-box').hide();
+	$('#new-comment').prepend("<%= escape_javascript(render('/comments/comment')) %>");
 }
 
 commentStream();

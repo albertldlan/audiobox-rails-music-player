@@ -13,10 +13,12 @@
 	<% if current_user %>
 	<div id="my-recent-uploads">
 			<h1>My Recent Uploads</h1>
-			<%= render "user-songs" %>
+			<div id="my-uploads" class="song-list">
+				<%= render "user-songs" %>
 			<% if !@user_songs.empty? %>
 			<%= link_to "View All Uploads", user_path(current_user), :remote => true, :id => "view-all" %>
 			<% end %>
+			</div>
 	</div>
 
 	<% end %>
