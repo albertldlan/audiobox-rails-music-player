@@ -26,7 +26,6 @@ group :assets do
   # gem 'therubyracer', :platforms => :ruby
 
   gem 'uglifier', '>= 1.0.3'
-  gem 'jquery-fileupload-rails'
 end
 
 gem 'jquery-rails'
@@ -51,4 +50,4 @@ gem 'devise'
 # gem 'omniauth-twitter'
 # gem 'wiselinks'
 gem 'figaro'
-gem 'backstretch-rails'
+gem 'jquery-fileupload-rails'
