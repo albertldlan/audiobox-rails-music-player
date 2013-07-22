@@ -1,6 +1,6 @@
 class Song < ActiveRecord::Base
   belongs_to :user
-  attr_accessible :description, :title, :direct_upload_url
+  attr_accessible :description, :title, :direct_upload_url, :songs_url
 
   before_create :default_title
 
