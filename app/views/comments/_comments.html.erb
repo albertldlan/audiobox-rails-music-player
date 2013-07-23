@@ -10,11 +10,12 @@
 		<% end %>
 		</div>
 	</div>
+	<% if current_user %>
 		<%= simple_form_for(Comment.new, :url => song_comments_path, :remote => true) do |f| %>
 		<%= f.input :comment, :input_html => {:style => 'width: 395px; height:55px'}, :label => false %>
 		<%= f.hidden_field :song_id, :value => @song.id %>
 		<%= f.hidden_field :time, :value => "0" %>
 		<%= f.button :submit, :class => "comment-btn", :value  => "Add Comment" %>
 		<% end %>
-
+	<% end %>
 </div>
