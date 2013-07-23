@@ -1,4 +1,4 @@
-Soapbox
+Audiobox
 ===============================
 
 Rails music player. jquery-fileupload-rails gem for the file uploads, Amazon S3 for file storage, jPlayer for playback. Ajax enabled site. Play song anywhere on page - persistent music. Comments stream not persistent across pages - needs to be fixed.

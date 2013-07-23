@@ -12,8 +12,8 @@
 		<div class="navbar-inner">
 			<div class="container">
 				<div id="logo-stuff">
-					<%= link_to "SoapBox", root_url, class:"logo", :remote => true %><br>
-					<span class="navbar-text">Speak Up</span>
+					<%= link_to "Audiobox", root_url, class:"logo", :remote => true %><br>
+					<span class="navbar-text">Make Some Noise</span>
 				</div>
 				<% if !current_user %>
 				<%= simple_form_for("user", :url => user_session_path) do |f| %>
