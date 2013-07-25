@@ -4,8 +4,8 @@
 		<div class="new-comment">
 		<% @comments.order("time desc").each do |comment| %>
 		<div class="comment-stream-box <%= comment.time %>">
-			<p><%= link_to "#{comment.user.username}", user_path(comment.user.id), :remote => true %> said</p>
-			<p><%= comment.comment %><span class="timestamp"> at <%= comment.time %> seconds</span></p>
+			<p><%= link_to "#{comment.user.username}", user_path(comment.user.id), :remote => true %> said<span class="timestamp"> at <%= comment.time %> seconds:</span></p>
+			<p><%= comment.comment %></p>
 		</div>
 		<% end %>
 		</div>
